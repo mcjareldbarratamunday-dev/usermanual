@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hanapbuhay — Software User Manual</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:Arial,sans-serif;font-size:12pt;line-height:1.5;color:#111;background:#f1f5f9;}
+.page{width:816px;margin:20px auto;padding:96px;background:#fff;min-height:1056px;border-radius:4px;box-shadow:0 2px 16px rgba(0,0,0,.08);position:relative;page-break-after:always;}
+.page:last-of-type{page-break-after:auto;}
+h1{font-size:18pt;font-weight:bold;text-align:center;margin-bottom:10px;}
+h2{font-size:14pt;font-weight:bold;margin:24px 0 8px;border-bottom:2px solid #111;padding-bottom:3px;}
+h3{font-size:12pt;font-weight:bold;margin:18px 0 6px;}
+h4{font-size:12pt;font-weight:bold;margin:12px 0 4px;text-decoration:underline;}
+p{margin-bottom:10px;text-align:justify;}
+ul,ol{margin:6px 0 10px 26px;}li{margin-bottom:4px;}
+table{width:100%;border-collapse:collapse;margin:10px 0;font-size:11pt;}
+th{background:#1e3a5f;color:#fff;padding:7px 9px;text-align:left;font-weight:bold;}
+td{padding:6px 9px;border:1px solid #ccc;vertical-align:top;}
+tr:nth-child(even) td{background:#f4f6fb;}
+.cover{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:860px;text-align:center;gap:12px;}
+.cover hr{width:100%;border:none;border-top:2px solid #111;margin:12px 0;}
+.logo-box{width:100px;height:100px;background:linear-gradient(135deg,#312e81,#4f46e5,#7c3aed);border-radius:20px;display:flex;align-items:center;justify-content:center;font-size:48px;margin:8px auto;box-shadow:0 8px 32px rgba(79,70,229,.3);}
+.manual-title{font-size:15pt;font-weight:bold;letter-spacing:3px;background:#1e3a5f;color:#fff;padding:8px 28px;border-radius:6px;}
+.authors-box{border:2px solid #4f46e5;border-radius:8px;padding:12px 36px;text-align:left;min-width:320px;}
+.toc-entry{display:flex;justify-content:space-between;border-bottom:1px dotted #94a3b8;padding:4px 0;font-size:11.5pt;}
+.toc-h2{font-weight:bold;margin-top:8px;}
+.toc-h3{padding-left:18px;}
+.toc-h4{padding-left:34px;font-size:11pt;color:#374151;}
+.screenshot{border:1px solid #e2e8f0;background:#f8fafc;border-radius:6px;margin:10px 0;overflow:hidden;}
+.screenshot img{width:100%;display:block;}
+.fig{text-align:center;font-size:10pt;font-style:italic;color:#475569;margin-bottom:14px;}
+.step-box{background:#f0f4ff;border-left:4px solid #4f46e5;border-radius:0 8px 8px 0;padding:10px 14px;margin:10px 0;font-size:11.5pt;}
+.sn{font-weight:bold;color:#4f46e5;}
+.info-box{background:#eff6ff;border:1px solid #bfdbfe;border-radius:8px;padding:10px 14px;margin:10px 0;}
+.warn-box{background:#fffbeb;border:1px solid #fde68a;border-radius:8px;padding:10px 14px;margin:10px 0;}
+.tip-box{background:#f0fdf4;border:1px solid #bbf7d0;border-radius:8px;padding:10px 14px;margin:10px 0;}
+.pn{position:absolute;bottom:36px;right:96px;font-size:10pt;color:#6b7280;}
+.pnc{position:absolute;bottom:36px;left:0;right:0;text-align:center;font-size:10pt;color:#6b7280;}
+.flow{display:flex;flex-direction:column;align-items:center;gap:0;margin:14px 0;}
+.fn{background:#4f46e5;color:#fff;border-radius:6px;padding:8px 28px;font-size:11pt;font-weight:bold;text-align:center;width:240px;}
+.fa{font-size:18pt;color:#4f46e5;line-height:1.2;}
+code{background:#f1f5f9;padding:1px 5px;border-radius:3px;font-size:11pt;}
+.dev-msg{background:linear-gradient(135deg,#1e1b4b,#312e81);color:#fff;border-radius:14px;padding:36px 44px;margin:16px 0;}
+.screen-nav{position:fixed;top:20px;right:20px;z-index:999;display:flex;flex-direction:column;gap:8px;}
+.screen-nav button{background:#4f46e5;color:#fff;border:none;border-radius:8px;padding:10px 18px;font-size:13px;font-weight:bold;cursor:pointer;}
+@media print{body{background:#fff;}.page{box-shadow:none;margin:0;width:100%;border-radius:0;}.screen-nav{display:none;}}
+</style>
+</head>
+<body>
+<div class="screen-nav">
+  <button onclick="window.print()">🖨️ Print / Save PDF</button>
+  <button onclick="location.href='../index.php'">← Back to Site</button>
+</div>
+
+<!-- COVER PAGE -->
+<div class="page">
+<div class="cover">
+  <div style="font-size:11pt;line-height:1.8;">
+    <strong>COURSE TITLE &nbsp;: GEC IT</strong><br>
+    <strong>DEPARTMENT &nbsp;&nbsp;: COLLEGE OF INFORMATION AND COMMUNICATION TECHNOLOGY</strong><br>
+    <strong>INSTRUCTOR &nbsp;&nbsp;: NINA NICDAO</strong><br>
+    <strong>PROGRAM &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: BSIT</strong>
+  </div>
+  <hr>
+  <div class="manual-title">L A B O R A T O R Y &nbsp; A C T I V I T Y &nbsp; M A N U A L</div>
+  <div style="font-size:13pt;font-weight:bold;">SEMESTRAL OUTPUT — SOFTWARE USER MANUAL</div>
+  <hr>
+  <div class="logo-box">💼</div>
+  <div style="font-size:26pt;font-weight:900;letter-spacing:2px;color:#1e1b4b;">HANAPBUHAY</div>
+  <div style="font-size:13pt;color:#4338ca;">Philippine Job Portal &amp; Career Platform</div>
+  <div style="font-size:11pt;color:#6b7280;">Version 1.0.0 &nbsp;|&nbsp; Academic Year 2025–2026</div>
+  <div class="authors-box">
+    <strong>AUTHORS / DEVELOPERS:</strong><br><br>
+    <div>1. <strong>JR DELA ROSE</strong> &nbsp;<span style="font-size:10pt;color:#6b7280;">(Member)</span></div>
+    <div>2. <strong>RYAN MANUEL</strong> &nbsp;<span style="font-size:10pt;color:#6b7280;">(Hipster)</span></div>
+    <div>3. <strong>ERIEL ANGELO TOLENTINO</strong> &nbsp;<span style="font-size:10pt;color:#6b7280;">(Hustler)</span></div>
+    <div>4. <strong>MC JARELD BARRA TAMUNDAY</strong> &nbsp;<span style="font-size:10pt;color:#6b7280;">(Hacker)</span></div>
+  </div>
+  <div style="font-size:11pt;"><strong>DATE OF SUBMISSION:</strong> &nbsp; April 10, 2026</div>
+</div>
+<div class="pnc">i</div>
+</div>
+
+<!-- TABLE OF CONTENTS -->
+<div class="page">
+<h1>TABLE OF CONTENTS</h1>
+<div style="margin-top:16px;">
+  <div class="toc-entry toc-h2"><span>1. Introduction</span><span>3</span></div>
+  <div class="toc-entry toc-h3"><span>1.1 Purpose of the Manual</span><span>3</span></div>
+  <div class="toc-entry toc-h3"><span>1.2 SDG Goal</span><span>3</span></div>
+  <div class="toc-entry toc-h3"><span>1.3 Startup Introduction</span><span>3</span></div>
+  <div class="toc-entry toc-h3"><span>1.4 Target Users / User Persona</span><span>4</span></div>
+  <div class="toc-entry toc-h3"><span>1.5 TAM, SAM, SOM</span><span>4</span></div>
+  <div class="toc-entry toc-h3"><span>1.6 Overview of the System</span><span>5</span></div>
+  <div class="toc-entry toc-h3"><span>1.7 Scope and Limitations</span><span>5</span></div>
+  <div class="toc-entry toc-h2"><span>2. System Overview</span><span>6</span></div>
+  <div class="toc-entry toc-h3"><span>2.1 Description of the Software</span><span>6</span></div>
+  <div class="toc-entry toc-h3"><span>2.2 Key Features</span><span>6</span></div>
+  <div class="toc-entry toc-h3"><span>2.3 Benefits of Using the System</span><span>7</span></div>
+  <div class="toc-entry toc-h2"><span>3. System Requirements</span><span>7</span></div>
+  <div class="toc-entry toc-h2"><span>4. Installation Guide</span><span>8</span></div>
+  <div class="toc-entry toc-h2"><span>5. User Interface Overview</span><span>10</span></div>
+  <div class="toc-entry toc-h2"><span>6. User Roles and Access Levels</span><span>12</span></div>
+  <div class="toc-entry toc-h2"><span>7. Step-by-Step Procedures</span><span>14</span></div>
+  <div class="toc-entry toc-h4"><span>&nbsp;&nbsp;7.1 Registration</span><span>14</span></div>
+  <div class="toc-entry toc-h4"><span>&nbsp;&nbsp;7.2 Login</span><span>15</span></div>
+  <div class="toc-entry toc-h4"><span>&nbsp;&nbsp;7.3 Browsing and Searching Jobs</span><span>16</span></div>
+  <div class="toc-entry toc-h4"><span>&nbsp;&nbsp;7.4 Applying for a Job</span><span>17</span></div>
+  <div class="toc-entry toc-h4"><span>&nbsp;&nbsp;7.5 Resume Builder</span><span>18</span></div>
+  <div class="toc-entry toc-h4"><span>&nbsp;&nbsp;7.6 Posting a Job (Employer)</span><span>19</span></div>
+  <div class="toc-entry toc-h4"><span>&nbsp;&nbsp;7.7 Managing Applicants (Employer)</span><span>20</span></div>
+  <div class="toc-entry toc-h4"><span>&nbsp;&nbsp;7.8 Admin Dashboard</span><span>21</span></div>
+  <div class="toc-entry toc-h2"><span>8. Troubleshooting Guide</span><span>22</span></div>
+  <div class="toc-entry toc-h2"><span>9. Frequently Asked Questions</span><span>23</span></div>
+  <div class="toc-entry toc-h2"><span>10. Maintenance and Support</span><span>24</span></div>
+  <div class="toc-entry toc-h2"><span>11. Glossary of Terms</span><span>25</span></div>
+  <div class="toc-entry toc-h2"><span>12. Appendices</span><span>26</span></div>
+  <div class="toc-entry toc-h3"><span>12.1 Flowchart / Algorithm &amp; Pseudo Code</span><span>26</span></div>
+  <div class="toc-entry toc-h3"><span>12.2 Low-Fidelity Prototype</span><span>27</span></div>
+  <div class="toc-entry toc-h3"><span>12.3 High-Fidelity Prototype</span><span>27</span></div>
+  <div class="toc-entry toc-h3"><span>12.4 Message from the Developer</span><span>28</span></div>
+</div>
+<div class="pnc">ii</div>
+</div>
+
+<!-- SECTION 1: INTRODUCTION -->
+<div class="page">
+<h2>1. INTRODUCTION</h2>
+<h3>1.1 Purpose of the Manual</h3>
+<p>This Software User Manual (SUM) is the official reference guide for <strong>Hanapbuhay</strong>, a web-based Philippine job portal. It provides complete instructions for job seekers, employers, and administrators covering registration, navigation, core features, and troubleshooting. It is also submitted as a semestral output for the <em>GEC IT Laboratory Activity</em>.</p>
+
+<h3>1.2 SDG Goal</h3>
+<div class="info-box">
+  <strong>🌱 UN Sustainable Development Goal 8.6 — Decent Work and Economic Growth</strong><br><br>
+  <em>"Substantially reduce the proportion of youth not in employment, education or training (NEET)."</em><br><br>
+  Hanapbuhay directly addresses SDG 8.6 by providing a <strong>free digital platform</strong> connecting unemployed Filipino youth with employment. By removing financial barriers and providing a built-in resume builder, the system helps reduce the NEET rate especially in underserved communities outside Metro Manila.
+</div>
+
+<h3>1.3 Startup Introduction</h3>
+<p><strong>Hanapbuhay</strong> (Filipino for "to seek a livelihood") is a Philippine-built startup job portal that democratizes access to employment. Unlike commercial job boards with premium fees, Hanapbuhay lets all job seekers browse, apply, and build resumes at <strong>zero cost</strong>. Employers operate on a sustainable subscription model, keeping the seeker side permanently free.</p>
+<p>Built with PHP 8.2, MySQL, and Tailwind CSS, the system is fast, accessible, mobile-friendly, and fully compliant with the Philippine Data Privacy Act (RA 10173).</p>
+
+<h3>1.4 Target Users / User Persona</h3>
+<table>
+  <tr><th>Persona</th><th>Profile</th><th>Goals</th><th>Pain Points</th></tr>
+  <tr><td><strong>Maria, 22</strong><br>Fresh Graduate</td><td>BS IT graduate from a state university in Davao</td><td>Find first IT job; build professional resume</td><td>Cannot afford premium job boards</td></tr>
+  <tr><td><strong>Juan, 35</strong><br>HR Manager</td><td>HR Manager at a mid-sized BPO in Cebu</td><td>Post jobs quickly; review applicants efficiently</td><td>High cost of traditional job boards</td></tr>
+  <tr><td><strong>Admin</strong><br>IT Department</td><td>In-house system administrator</td><td>Monitor users, manage subscriptions</td><td>No centralized management dashboard</td></tr>
+  <tr><td><strong>Guest</strong><br>Visitor</td><td>Unregistered user browsing job listings</td><td>Discover opportunities; learn about platform</td><td>Cannot apply without registering</td></tr>
+</table>
+
+<h3>1.5 TAM, SAM, SOM</h3>
+<table>
+  <tr><th>Market</th><th>Definition</th><th>Estimate</th></tr>
+  <tr><td><strong>TAM</strong> — Total Addressable Market</td><td>All working-age Filipinos (15–64) and all registered PH businesses</td><td>~47M labor force; ~1.1M businesses</td></tr>
+  <tr><td><strong>SAM</strong> — Serviceable Addressable Market</td><td>Filipinos with internet access actively job-seeking or hiring</td><td>~18M job seekers; ~300K SMEs</td></tr>
+  <tr><td><strong>SOM</strong> — Serviceable Obtainable Market</td><td>Reachable users in Years 1–2 via digital marketing &amp; partnerships</td><td>~50,000 seekers; ~500 employer accounts</td></tr>
+</table>
+
+<h3>1.6 Overview of the System</h3>
+<p>Hanapbuhay is a multi-role web application with three user types: Job Seekers, Employers, and Administrators. It provides a searchable job board, application management, resume builder, subscription-based employer accounts, admin dashboard, and a world-class accessibility widget.</p>
+
+<h3>1.7 Scope and Limitations</h3>
+<strong>Scope:</strong>
+<ul>
+  <li>Web-based only (no native mobile app in v1.0)</li>
+  <li>Designed for Philippine-based users; three roles: Seeker, Employer, Admin</li>
+  <li>Features: job posting, applications, resume builder, subscription management, notifications</li>
+</ul>
+<strong>Limitations:</strong>
+<ul>
+  <li>No integrated payment gateway — subscriptions activated manually by admin</li>
+  <li>No real-time chat; no AI-based job matching in v1.0</li>
+  <li>Requires active internet (CDN-loaded assets)</li>
+  <li>Maximum file upload: 5MB</li>
+</ul>
+<div class="pn">3–5</div>
+</div>
+
+<!-- SECTION 2 & 3 -->
+<div class="page">
+<h2>2. SYSTEM OVERVIEW</h2>
+<h3>2.1 Description of the Software</h3>
+<p>Hanapbuhay is a full-stack web application built on the LAMP stack (Apache, MariaDB, PHP 8.2). It features a bilingual-friendly interface with Filipino terminology and SDG-aligned objectives. The system runs on a local XAMPP server and is accessible via any modern web browser.</p>
+
+<h3>2.2 Key Features</h3>
+<table>
+  <tr><th>#</th><th>Feature</th><th>Description</th><th>User</th></tr>
+  <tr><td>1</td><td>Job Search &amp; Browse</td><td>Filter by keyword, location, type, salary, category</td><td>All</td></tr>
+  <tr><td>2</td><td>Job Application</td><td>One-click apply with resume and cover letter</td><td>Seeker</td></tr>
+  <tr><td>3</td><td>Resume Builder</td><td>3 templates with live split-screen preview; printable PDF</td><td>Seeker</td></tr>
+  <tr><td>4</td><td>Application Tracker</td><td>Track status: Pending → Reviewed → Shortlisted → Hired/Rejected</td><td>Seeker</td></tr>
+  <tr><td>5</td><td>Job Posting</td><td>Create listings with rich description, salary, deadlines</td><td>Employer</td></tr>
+  <tr><td>6</td><td>Applicant Management</td><td>View and update status of all applicants</td><td>Employer</td></tr>
+  <tr><td>7</td><td>Subscription Plans</td><td>30-day free trial + Basic, Professional, Enterprise plans</td><td>Employer</td></tr>
+  <tr><td>8</td><td>Admin Dashboard</td><td>Manage users, jobs, categories, subscriptions, analytics</td><td>Admin</td></tr>
+  <tr><td>9</td><td>Notifications</td><td>In-app alerts for application updates and system events</td><td>All</td></tr>
+  <tr><td>10</td><td>Accessibility Widget</td><td>Dark mode, text size (5 levels), dyslexia font, high contrast, reduced motion</td><td>All</td></tr>
+  <tr><td>11</td><td>Company Profiles</td><td>Browse employers with active job counts</td><td>All</td></tr>
+  <tr><td>12</td><td>Save Jobs</td><td>Bookmark listings for later</td><td>Seeker</td></tr>
+</table>
+
+<h3>2.3 Benefits of Using the System</h3>
+<ul>
+  <li><strong>Job Seekers:</strong> Free access to thousands of listings; professional resume builder; centralized tracking</li>
+  <li><strong>Employers:</strong> Cost-effective hiring with 30-day free trial; easy applicant management</li>
+  <li><strong>Society:</strong> Reduces youth unemployment; supports SDG 8.6; promotes digital inclusion</li>
+  <li><strong>Admins:</strong> Centralized management with real-time analytics</li>
+</ul>
+
+<h2>3. SYSTEM REQUIREMENTS</h2>
+<h3>3.1 Hardware Requirements</h3>
+<table>
+  <tr><th>Component</th><th>Minimum</th><th>Recommended</th></tr>
+  <tr><td>Processor</td><td>Intel Core i3 / AMD Ryzen 3</td><td>Intel Core i5 or higher</td></tr>
+  <tr><td>Memory (RAM)</td><td>4 GB</td><td>8 GB or more</td></tr>
+  <tr><td>Storage</td><td>10 GB available</td><td>50 GB SSD</td></tr>
+  <tr><td>Display</td><td>1280 × 768</td><td>1920 × 1080 Full HD</td></tr>
+</table>
+
+<h3>3.2 Software Requirements</h3>
+<table>
+  <tr><th>Software</th><th>Version / Details</th></tr>
+  <tr><td>Operating System</td><td>Windows 10/11, macOS 12+, or Linux</td></tr>
+  <tr><td>Web Server</td><td>Apache 2.4+ (via XAMPP)</td></tr>
+  <tr><td>PHP</td><td>PHP 8.2 or higher</td></tr>
+  <tr><td>Database</td><td>MariaDB 10.4+ / MySQL 8.0+</td></tr>
+  <tr><td>Web Browser</td><td>Chrome 100+, Firefox 100+, Edge 100+, Safari 15+</td></tr>
+</table>
+
+<h3>3.3 Internet Requirements</h3>
+<ul>
+  <li>Minimum: 1 Mbps (basic browsing and form submission)</li>
+  <li>Recommended: 10 Mbps+ (file uploads — resumes, logos)</li>
+  <li>Note: Tailwind CSS and fonts load from CDN — stable connection required</li>
+</ul>
+<div class="pn">6–8</div>
+</div>
+
+<!-- SECTION 4: INSTALLATION -->
+<div class="page">
+<h2>4. INSTALLATION GUIDE</h2>
+<div class="warn-box">⚠️ <strong>Before You Begin:</strong> Download and install XAMPP 8.2 from <strong>https://www.apachefriends.org</strong></div>
+
+<h4>Step 1: Start XAMPP Services</h4>
+<div class="step-box">
+  <span class="sn">1.</span> Open the XAMPP Control Panel.<br>
+  <span class="sn">2.</span> Click <strong>Start</strong> next to <em>Apache</em> and <em>MySQL</em>. Both must show green status.
+</div>
+<div class="screenshot"><img src="screenshots/figure-01-xampp.png" alt="Figure 1: XAMPP Control Panel"></div>
+<p class="fig">Figure 1: XAMPP Control Panel — Apache and MySQL running</p>
+
+<h4>Step 2: Copy Project Files</h4>
+<div class="step-box">
+  <span class="sn">1.</span> Copy the <strong>hanapbuhay2</strong> folder into <code>C:\xampp2\htdocs\</code><br>
+  <span class="sn">2.</span> Final path: <code>C:\xampp2\htdocs\hanapbuhay2\</code>
+</div>
+<div class="screenshot"><img src="screenshots/figure-02-htdocs.png" alt="Figure 2: hanapbuhay2 folder inside htdocs"></div>
+<p class="fig">Figure 2: hanapbuhay2 folder inside htdocs</p>
+
+<h4>Step 3: Create the Database</h4>
+<div class="step-box">
+  <span class="sn">1.</span> Open browser → go to <code>http://localhost/phpmyadmin</code><br>
+  <span class="sn">2.</span> Click <strong>New</strong> → type database name: <code>hanapbuhay</code> → click <strong>Create</strong><br>
+  <span class="sn">3.</span> Click the <strong>Import</strong> tab → Choose File → select <code>hanapbuhay2/sql/hanapbuhay.sql</code><br>
+  <span class="sn">4.</span> Click <strong>Import</strong>. Wait for the success message.
+</div>
+<div class="screenshot"><img src="screenshots/figure-03-phpmyadmin.png" alt="Figure 3: phpMyAdmin — Importing hanapbuhay.sql"></div>
+<p class="fig">Figure 3: phpMyAdmin — Importing hanapbuhay.sql</p>
+
+<h4>Step 4: Configure Database Connection</h4>
+<div class="step-box">
+  <span class="sn">1.</span> Open <code>hanapbuhay2/config/database.php</code><br>
+  <span class="sn">2.</span> Verify: <code>DB_HOST='localhost'</code>, <code>DB_NAME='hanapbuhay'</code>, <code>DB_USER='root'</code>, <code>DB_PASS=''</code><br>
+  <span class="sn">3.</span> Save the file.
+</div>
+
+<h4>Step 5: Launch the Application</h4>
+<div class="step-box">
+  <span class="sn">1.</span> Open browser → go to <code>http://localhost/hanapbuhay2</code><br>
+  <span class="sn">2.</span> The Hanapbuhay homepage will load.<br>
+  <span class="sn">3.</span> Default admin login: <strong>admin@hanapbuhay.ph</strong> / <strong>Admin@123</strong>
+</div>
+<div class="screenshot"><img src="screenshots/figure-04-homepage.png" alt="Figure 4: Hanapbuhay Homepage"></div>
+<p class="fig">Figure 4: Hanapbuhay Homepage</p>
+
+<h3>4.2 Troubleshooting Installation Issues</h3>
+<table>
+  <tr><th>Issue</th><th>Cause</th><th>Solution</th></tr>
+  <tr><td>Page not found (404)</td><td>Project not in htdocs</td><td>Move folder to <code>C:\xampp2\htdocs\hanapbuhay2</code></td></tr>
+  <tr><td>Database connection error</td><td>Wrong credentials or DB not created</td><td>Check <code>config/database.php</code>; verify DB exists in phpMyAdmin</td></tr>
+  <tr><td>Apache won't start</td><td>Port 80 conflict (Skype, IIS)</td><td>Change Apache port to 8080 in XAMPP, or stop conflicting app</td></tr>
+  <tr><td>SQL import error</td><td>Table conflicts</td><td>Drop the database, recreate it, re-import SQL</td></tr>
+  <tr><td>Blank white page</td><td>PHP error</td><td>Enable error display in <code>php.ini</code>; check Apache error logs</td></tr>
+</table>
+<div class="pn">8–9</div>
+</div>
+
+<!-- SECTION 5 & 6 -->
+<div class="page">
+<h2>5. USER INTERFACE OVERVIEW</h2>
+<h3>5.1 Dashboard Explanation</h3>
+<ul>
+  <li><strong>Seeker Dashboard:</strong> Application stats, saved jobs, profile completion, quick links to browse and resume builder</li>
+  <li><strong>Employer Dashboard:</strong> Active job postings, applicant count, subscription status (30-day trial countdown), post job shortcut</li>
+  <li><strong>Admin Dashboard:</strong> Platform-wide statistics, recent activity, management links for users/jobs/categories/subscriptions</li>
+</ul>
+<div class="screenshot"><img src="screenshots/figure-05-seeker-dashboard.png" alt="Figure 5: Seeker Dashboard"></div>
+<p class="fig">Figure 5: Seeker Dashboard</p>
+<div class="screenshot"><img src="screenshots/figure-06-employer-dashboard.png" alt="Figure 6: Employer Dashboard"></div>
+<p class="fig">Figure 6: Employer Dashboard</p>
+
+<h3>5.2 Navigation Menu</h3>
+<table>
+  <tr><th>Menu Item</th><th>Visible To</th><th>Destination</th></tr>
+  <tr><td>Find Jobs</td><td>All</td><td>Browse all active job listings</td></tr>
+  <tr><td>Companies</td><td>All</td><td>Browse registered employer companies</td></tr>
+  <tr><td>Pricing</td><td>All</td><td>Subscription plan details</td></tr>
+  <tr><td>Dashboard</td><td>Logged-in</td><td>Role-specific dashboard</td></tr>
+  <tr><td>My Profile</td><td>Seeker</td><td>Edit seeker profile</td></tr>
+  <tr><td>My Applications</td><td>Seeker</td><td>Track submitted applications</td></tr>
+  <tr><td>Resume Builder</td><td>Seeker</td><td>Create and edit resume</td></tr>
+  <tr><td>Post a Job</td><td>Employer</td><td>Create new job listing</td></tr>
+  <tr><td>Manage Jobs</td><td>Employer</td><td>Edit all posted jobs</td></tr>
+  <tr><td>Admin Panel</td><td>Admin</td><td>Platform administration</td></tr>
+  <tr><td>Notifications 🔔</td><td>Logged-in</td><td>In-app notifications (red badge = unread count)</td></tr>
+</table>
+
+<h3>5.3 Icons and Buttons</h3>
+<table>
+  <tr><th>Icon / Button</th><th>Description</th></tr>
+  <tr><td>♿ Accessibility</td><td>Opens accessibility widget — dark mode, text size, dyslexia font, high contrast</td></tr>
+  <tr><td>⭐ Featured badge</td><td>Marks employer-boosted job listings</td></tr>
+  <tr><td>💾 Save</td><td>Bookmarks a job to Saved Jobs list</td></tr>
+  <tr><td>✏️ Edit</td><td>Opens the edit form for the item</td></tr>
+  <tr><td>🗑️ Delete</td><td>Permanently removes the selected record</td></tr>
+  <tr><td>View →</td><td>Opens full detail view; turns indigo on hover</td></tr>
+</table>
+
+<h3>5.4 All Forms and Navigation</h3>
+<table>
+  <tr><th>Form</th><th>Key Fields</th><th>Access</th></tr>
+  <tr><td>Registration</td><td>Full Name, Email, Password, Role</td><td>Guest</td></tr>
+  <tr><td>Login</td><td>Email, Password</td><td>Guest</td></tr>
+  <tr><td>Seeker Profile</td><td>Headline, Bio, Skills, Experience, Education, Resume, Avatar</td><td>Seeker</td></tr>
+  <tr><td>Job Search</td><td>Keywords, Location, Job Type, Category, Salary</td><td>All</td></tr>
+  <tr><td>Job Application</td><td>Cover Letter, Resume File</td><td>Seeker</td></tr>
+  <tr><td>Resume Builder</td><td>Summary, Experience, Education, Skills, Languages, Certifications, Template</td><td>Seeker</td></tr>
+  <tr><td>Post Job</td><td>Title, Category, Type, Location, Salary, Description, Requirements, Deadline</td><td>Employer</td></tr>
+  <tr><td>Contact Form</td><td>Name, Email, Subject, Message</td><td>All</td></tr>
+</table>
+
+<h2>6. USER ROLES AND ACCESS LEVELS</h2>
+<table>
+  <tr><th>Role</th><th>Access Level</th><th>Key Permissions</th><th>Restrictions</th></tr>
+  <tr><td><strong>Administrator</strong></td><td>Highest</td><td>Manage all users, jobs, categories, subscriptions; view analytics</td><td>Cannot apply for jobs</td></tr>
+  <tr><td><strong>Job Seeker</strong></td><td>Standard</td><td>Browse &amp; apply for jobs, build resume, track applications, save jobs, manage profile</td><td>Cannot post jobs or access admin panel</td></tr>
+  <tr><td><strong>Employer</strong></td><td>Standard</td><td>Post jobs (by plan limit), manage listings, view &amp; update applicants, manage company profile</td><td>Cannot apply for jobs or access admin panel</td></tr>
+  <tr><td><strong>Guest</strong></td><td>Read Only</td><td>Browse jobs, view companies, view About/Contact/Pricing pages, register</td><td>Cannot apply, save, post, or use dashboard</td></tr>
+</table>
+
+<h3>Subscription Plan Limits (Employer)</h3>
+<table>
+  <tr><th>Plan</th><th>Price</th><th>Job Post Limit</th><th>Notes</th></tr>
+  <tr><td>Free Trial</td><td>₱0</td><td>Up to 15 jobs</td><td>30-day trial on registration; Professional features</td></tr>
+  <tr><td>Basic</td><td>₱999/mo</td><td>5 jobs</td><td>Standard job listings</td></tr>
+  <tr><td>Professional</td><td>₱2,499/mo</td><td>15 jobs</td><td>Includes featured job option</td></tr>
+  <tr><td>Enterprise</td><td>₱4,999/mo</td><td>Unlimited</td><td>Priority support + all features</td></tr>
+</table>
+<div class="pn">10–13</div>
+</div>
+
+<!-- SECTION 7: PROCEDURES -->
+<div class="page">
+<h2>7. STEP-BY-STEP PROCEDURES (CORE FEATURES)</h2>
+
+<h3>7.1 Registration</h3>
+<p><strong>Purpose:</strong> Create a new account as Job Seeker or Employer.</p>
+<div class="step-box">
+  <span class="sn">Step 1.</span> Go to <code>http://localhost/hanapbuhay2</code> → click <strong>"Get Started"</strong><br>
+  <span class="sn">Step 2.</span> Select role: <strong>Job Seeker</strong> or <strong>Employer</strong><br>
+  <span class="sn">Step 3.</span> Enter Full Name, Email, Password (min. 8 chars), Confirm Password<br>
+  <span class="sn">Step 4.</span> Click <strong>"Create Account"</strong><br>
+  <span class="sn">Step 5.</span> Redirected to your role-specific dashboard automatically
+</div>
+<div class="screenshot"><img src="screenshots/figure-07-register.png" alt="Figure 7: Registration Form"></div>
+<p class="fig">Figure 7: Registration Form</p>
+<div class="tip-box">✅ <strong>Tip:</strong> Employers get a FREE 30-day Professional trial automatically — no credit card needed.</div>
+
+<h3>7.2 Login</h3>
+<p><strong>Purpose:</strong> Access your account and personalized dashboard.</p>
+<div class="step-box">
+  <span class="sn">Step 1.</span> Click <strong>"Sign In"</strong> in the navbar or go to <code>/auth/login.php</code><br>
+  <span class="sn">Step 2.</span> Enter your registered <strong>Email</strong> and <strong>Password</strong><br>
+  <span class="sn">Step 3.</span> Click <strong>"Sign In"</strong><br>
+  <span class="sn">Step 4.</span> Redirected to your dashboard (Seeker / Employer / Admin)
+</div>
+<div class="screenshot"><img src="screenshots/figure-08-login.png" alt="Figure 8: Login Page"></div>
+<p class="fig">Figure 8: Login Page</p>
+
+<h3>7.3 Browsing and Searching Jobs</h3>
+<p><strong>Purpose:</strong> Find job listings matching your skills, location, or work type.</p>
+<div class="step-box">
+  <span class="sn">Step 1.</span> Click <strong>"Find Jobs"</strong> in the navbar or use the homepage search bar<br>
+  <span class="sn">Step 2.</span> Enter a keyword (e.g., "Nurse", "Developer") and/or location<br>
+  <span class="sn">Step 3.</span> Use sidebar filters: Job Type, Category, Salary Range<br>
+  <span class="sn">Step 4.</span> Click any job card to view full details<br>
+  <span class="sn">Step 5.</span> Click <strong>"Apply Now"</strong> or <strong>"Save Job"</strong>
+</div>
+<div class="screenshot"><img src="screenshots/figure-09-browse-jobs.png" alt="Figure 9: Job Browse and Search Page"></div>
+<p class="fig">Figure 9: Job Browse and Search Page</p>
+
+<h3>7.4 Applying for a Job</h3>
+<p><strong>Purpose:</strong> Submit an application. Requires a Seeker account.</p>
+<div class="step-box">
+  <span class="sn">Step 1.</span> Open a job listing → Review details → Click <strong>"Apply Now"</strong><br>
+  <span class="sn">Step 2.</span> Write a <strong>Cover Letter</strong><br>
+  <span class="sn">Step 3.</span> Upload resume file (PDF/DOCX) OR use your saved profile resume<br>
+  <span class="sn">Step 4.</span> Click <strong>"Submit Application"</strong><br>
+  <span class="sn">Step 5.</span> View confirmation — application appears in <strong>My Applications</strong>
+</div>
+<div class="screenshot"><img src="screenshots/figure-10-apply.png" alt="Figure 10: Job Application Form"></div>
+<p class="fig">Figure 10: Job Application Form</p>
+
+<h3>7.5 Resume Builder</h3>
+<p><strong>Purpose:</strong> Create a professional resume without external software.</p>
+<div class="step-box">
+  <span class="sn">Step 1.</span> Go to <strong>Dashboard → Resume Builder</strong><br>
+  <span class="sn">Step 2.</span> Select template: <strong>Classic</strong>, <strong>Modern</strong>, or <strong>Minimal</strong><br>
+  <span class="sn">Step 3.</span> Fill in: Summary, Work Experience, Education, Skills, Languages, Certifications<br>
+  <span class="sn">Step 4.</span> The right panel shows a <strong>live preview</strong> updating in real-time as you type<br>
+  <span class="sn">Step 5.</span> Click <strong>"Save Resume"</strong> to store it; click <strong>"Print / Save as PDF"</strong> to download
+</div>
+<div class="screenshot"><img src="screenshots/figure-11-resume-builder.png" alt="Figure 11: Resume Builder"></div>
+<p class="fig">Figure 11: Resume Builder — Live Preview</p>
+
+<h3>7.6 Posting a Job (Employer)</h3>
+<p><strong>Purpose:</strong> Create a job listing. Requires an active subscription.</p>
+<div class="step-box">
+  <span class="sn">Step 1.</span> Go to <strong>Dashboard → Post a Job</strong><br>
+  <span class="sn">Step 2.</span> Fill in: Job Title, Category, Type, Location, Salary Min/Max, Description, Requirements, Deadline<br>
+  <span class="sn">Step 3.</span> Optionally toggle <strong>"Mark as Featured"</strong><br>
+  <span class="sn">Step 4.</span> Click <strong>"Post Job"</strong> — listing appears publicly immediately
+</div>
+<div class="screenshot"><img src="screenshots/figure-12-post-job.png" alt="Figure 12: Job Posting Form"></div>
+<p class="fig">Figure 12: Job Posting Form</p>
+
+<h3>7.7 Managing Applicants (Employer)</h3>
+<p><strong>Purpose:</strong> Review and update candidate statuses.</p>
+<div class="step-box">
+  <span class="sn">Step 1.</span> Go to <strong>Manage Jobs → View Applicants</strong><br>
+  <span class="sn">Step 2.</span> See all applicants with name, date, and current status<br>
+  <span class="sn">Step 3.</span> Click an applicant to view their cover letter, resume, and profile<br>
+  <span class="sn">Step 4.</span> Update status via dropdown: <em>Pending → Reviewed → Shortlisted → Hired / Rejected</em><br>
+  <span class="sn">Step 5.</span> Applicant receives a notification when status changes
+</div>
+<div class="screenshot"><img src="screenshots/figure-13-applicants.png" alt="Figure 13: Applicant Management"></div>
+<p class="fig">Figure 13: Applicant Management</p>
+
+<h3>7.8 Admin Dashboard</h3>
+<p><strong>Purpose:</strong> Monitor and manage all platform activity.</p>
+<div class="step-box">
+  <span class="sn">Step 1.</span> Login: <code>admin@hanapbuhay.ph</code> / <code>Admin@123</code><br>
+  <span class="sn">Step 2.</span> Admin Dashboard shows platform statistics (users, jobs, applications)<br>
+  <span class="sn">Step 3.</span> Sidebar navigation: <strong>Users, Jobs, Categories, Subscriptions</strong><br>
+  <span class="sn">Step 4.</span> To activate subscription: <em>Subscriptions → find pending record → click Activate</em>
+</div>
+<div class="screenshot"><img src="screenshots/figure-14-admin.png" alt="Figure 14: Admin Dashboard"></div>
+<p class="fig">Figure 14: Admin Dashboard</p>
+<div class="pn">14–21</div>
+</div>
+
+<!-- SECTIONS 8, 9, 10, 11 -->
+<div class="page">
+<h2>8. TROUBLESHOOTING GUIDE</h2>
+<table>
+  <tr><th>Problem</th><th>Symptom</th><th>Solution</th></tr>
+  <tr><td>Cannot log in</td><td>"Invalid email or password"</td><td>Check for typos; password is case-sensitive</td></tr>
+  <tr><td>Cannot apply for a job</td><td>Redirected to login page</td><td>Must be logged in as a Job Seeker</td></tr>
+  <tr><td>Cannot post a job</td><td>"No active plan" message</td><td>Subscription expired; contact admin to activate</td></tr>
+  <tr><td>SQL Duplicate column error</td><td>PDO Exception on applications page</td><td>Ensure using the latest SQL file from v1.0</td></tr>
+  <tr><td>Resume not saving</td><td>No success message</td><td>Ensure Name and Summary fields are filled</td></tr>
+  <tr><td>File upload fails</td><td>"File too large"</td><td>File must be under 5MB; convert to PDF</td></tr>
+  <tr><td>Dark mode not persisting</td><td>Resets on page reload</td><td>Enable cookies/localStorage in browser settings</td></tr>
+  <tr><td>Page layout broken</td><td>Missing styles</td><td>Check internet connection — Tailwind CSS loads from CDN</td></tr>
+  <tr><td>Accessibility button hidden</td><td>♿ button not visible</td><td>Scroll to bottom-right; button is fixed-position</td></tr>
+</table>
+
+<h2>9. FREQUENTLY ASKED QUESTIONS (FAQs)</h2>
+<h4>Q1: Is Hanapbuhay free for job seekers?</h4>
+<p><strong>A:</strong> Yes. All seeker features — browsing, applying, resume builder — are permanently free.</p>
+
+<h4>Q2: How do I get my employer subscription activated?</h4>
+<p><strong>A:</strong> New employers get a 30-day FREE Professional trial automatically. After the trial, contact the admin to activate a paid plan.</p>
+
+<h4>Q3: Can I use Hanapbuhay on my smartphone?</h4>
+<p><strong>A:</strong> Yes. The site is fully responsive and works on Chrome/Safari mobile. A native app is planned for v2.0.</p>
+
+<h4>Q4: How many jobs can an employer post?</h4>
+<p><strong>A:</strong> Basic: 5 jobs | Professional: 15 jobs | Enterprise: Unlimited.</p>
+
+<h4>Q5: Can I delete my application after submitting?</h4>
+<p><strong>A:</strong> No — contact the employer or admin to request withdrawal.</p>
+
+<h4>Q6: How do I change my password?</h4>
+<p><strong>A:</strong> Go to <strong>My Profile → Edit Profile</strong> → update password in the security section.</p>
+
+<h4>Q7: Who can see my resume?</h4>
+<p><strong>A:</strong> Only employers to whom you have submitted an application. It is not publicly visible.</p>
+
+<h4>Q8: Is my data safe on Hanapbuhay?</h4>
+<p><strong>A:</strong> Yes. Compliant with RA 10173 (Data Privacy Act). Passwords use bcrypt encryption.</p>
+
+<h2>10. MAINTENANCE AND SUPPORT</h2>
+<table>
+  <tr><th>Channel</th><th>Details</th></tr>
+  <tr><td>Email Support</td><td>support@hanapbuhay.ph</td></tr>
+  <tr><td>Technical Issues</td><td>technical@hanapbuhay.ph</td></tr>
+  <tr><td>Privacy Concerns</td><td>privacy@hanapbuhay.ph</td></tr>
+  <tr><td>Contact Form</td><td>http://localhost/hanapbuhay2/contact.php</td></tr>
+  <tr><td>Response Time</td><td>Within 24 business hours</td></tr>
+</table>
+
+<h3>Backup Procedure</h3>
+<div class="step-box">
+  <span class="sn">1.</span> Open <code>http://localhost/phpmyadmin</code> → select <strong>hanapbuhay</strong> database<br>
+  <span class="sn">2.</span> Click <strong>Export</strong> tab → Format: SQL → Click <strong>Export</strong><br>
+  <span class="sn">3.</span> Save .sql file to Google Drive or external storage<br>
+  <span class="sn">4.</span> Also copy <code>assets/uploads/</code> folder for user-uploaded files<br>
+  <span class="sn">5.</span> Recommended frequency: <strong>Weekly</strong> or before any major update
+</div>
+
+<h2>11. GLOSSARY OF TERMS</h2>
+<table>
+  <tr><th>Term</th><th>Definition</th></tr>
+  <tr><td>BCrypt</td><td>Password hashing algorithm used to securely store passwords</td></tr>
+  <tr><td>CDN</td><td>Content Delivery Network — servers that deliver web assets faster</td></tr>
+  <tr><td>CSRF</td><td>Cross-Site Request Forgery — a security attack; prevented by CSRF tokens</td></tr>
+  <tr><td>LAMP Stack</td><td>Linux/Windows, Apache, MySQL, PHP — the server stack used by Hanapbuhay</td></tr>
+  <tr><td>NEET</td><td>Not in Employment, Education, or Training — youth unemployment measure</td></tr>
+  <tr><td>PDO</td><td>PHP Data Objects — secure database access extension for PHP</td></tr>
+  <tr><td>PWA</td><td>Progressive Web App — web application installable on mobile devices</td></tr>
+  <tr><td>Role</td><td>User category (Admin, Seeker, Employer) defining system access</td></tr>
+  <tr><td>SDG</td><td>Sustainable Development Goals — 17 global goals set by the United Nations</td></tr>
+  <tr><td>Session</td><td>Temporary server-side storage keeping a user logged in</td></tr>
+  <tr><td>SQL</td><td>Structured Query Language — used to manage the database</td></tr>
+  <tr><td>XAMPP</td><td>Free local web server package: Apache + MariaDB + PHP</td></tr>
+</table>
+<div class="pn">22–25</div>
+</div>
+
+<!-- APPENDICES -->
+<div class="page">
+<h2>12. APPENDICES</h2>
+<h3>12.1 Flowchart — Login Process</h3>
+<div class="flow">
+  <div class="fn" style="background:#065f46;border-radius:99px;">START</div>
+  <div class="fa">↓</div>
+  <div class="fn" style="background:#1e40af;">Open Login Page</div>
+  <div class="fa">↓</div>
+  <div class="fn" style="background:#1e40af;">Enter Email &amp; Password → Submit</div>
+  <div class="fa">↓</div>
+  <div class="fn" style="background:#92400e;">Validate CSRF Token</div>
+  <div class="fa">↓</div>
+  <div class="fn" style="background:#b45309;color:#111;">Email exists in Database?</div>
+  <div style="display:flex;gap:80px;margin:4px 0;">
+    <div style="display:flex;flex-direction:column;align-items:center;gap:2px;">
+      <div style="font-weight:bold;color:#dc2626;font-size:11pt;">NO ↙</div>
+      <div class="fn" style="background:#dc2626;width:190px;">Show "Invalid credentials"</div>
+      <div class="fa">↓</div>
+      <div class="fn" style="background:#dc2626;width:190px;">Redirect to Login</div>
+    </div>
+    <div style="display:flex;flex-direction:column;align-items:center;gap:2px;">
+      <div style="font-weight:bold;color:#15803d;font-size:11pt;">YES ↘</div>
+      <div class="fn" style="background:#b45309;color:#111;width:190px;">bcrypt_verify(password)?</div>
+      <div class="fa">↓</div>
+      <div class="fn" style="background:#15803d;width:190px;">Create Session</div>
+      <div class="fa">↓</div>
+      <div class="fn" style="background:#15803d;width:190px;">Redirect to Dashboard</div>
+    </div>
+  </div>
+  <div class="fa" style="margin-top:6px;">↓</div>
+  <div class="fn" style="background:#065f46;border-radius:99px;">END</div>
+</div>
+<p class="fig">Figure 15: Login Process Flowchart</p>
+
+<h3>Pseudo Code — Login Algorithm</h3>
+<div style="background:#1e293b;color:#e2e8f0;padding:14px 18px;border-radius:8px;font-family:monospace;font-size:11pt;line-height:1.7;">
+  <span style="color:#94a3b8;">// HANAPBUHAY Login Algorithm</span><br>
+  <span style="color:#f472b6;">BEGIN</span> LoginProcess<br>
+  &nbsp;&nbsp;<span style="color:#60a5fa;">INPUT</span> email, password<br>
+  &nbsp;&nbsp;<span style="color:#fbbf24;">IF</span> csrf_token invalid → <span style="color:#f87171;">ABORT</span><br>
+  &nbsp;&nbsp;user = <span style="color:#60a5fa;">QUERY</span> DB WHERE email = input_email<br>
+  &nbsp;&nbsp;<span style="color:#fbbf24;">IF</span> user NOT FOUND → <span style="color:#f87171;">SHOW</span> error → <span style="color:#f87171;">REDIRECT</span> login<br>
+  &nbsp;&nbsp;<span style="color:#fbbf24;">IF</span> bcrypt_verify(password, user.hash) = FALSE → <span style="color:#f87171;">SHOW</span> error<br>
+  &nbsp;&nbsp;<span style="color:#fbbf24;">ELSE</span><br>
+  &nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#4ade80;">SET</span> SESSION[user_id] = user.id<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#4ade80;">SET</span> SESSION[role] = user.role<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#4ade80;">REDIRECT</span> to role_dashboard<br>
+  <span style="color:#f472b6;">END</span>
+</div>
+
+<h3>12.2 Low-Fidelity Prototype</h3>
+<p>Initial wireframe sketches mapping the basic layout before development.</p>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:10px 0;">
+  <div>
+    <div style="border:2px solid #94a3b8;border-radius:6px;background:#f8fafc;overflow:hidden;font-size:8pt;color:#475569;">
+      <!-- Announcement Bar -->
+      <div style="background:#c7d2fe;height:14px;display:flex;align-items:center;justify-content:center;font-size:7pt;color:#3730a3;font-weight:bold;">[ 🎁 30-day FREE trial banner ]</div>
+      <!-- Navbar -->
+      <div style="background:#fff;border-bottom:1px solid #e2e8f0;padding:5px 8px;display:flex;align-items:center;justify-content:space-between;">
+        <div style="display:flex;align-items:center;gap:4px;">
+          <div style="background:#4f46e5;width:12px;height:12px;border-radius:3px;"></div>
+          <div style="background:#cbd5e1;width:40px;height:7px;border-radius:2px;"></div>
+        </div>
+        <div style="display:flex;gap:8px;">
+          <div style="background:#e2e8f0;width:28px;height:6px;border-radius:2px;"></div>
+          <div style="background:#e2e8f0;width:28px;height:6px;border-radius:2px;"></div>
+          <div style="background:#e2e8f0;width:28px;height:6px;border-radius:2px;"></div>
+        </div>
+        <div style="display:flex;align-items:center;gap:4px;">
+          <div style="background:#e2e8f0;width:14px;height:14px;border-radius:50%;"></div>
+          <div style="background:#4f46e5;width:14px;height:14px;border-radius:50%;"></div>
+        </div>
+      </div>
+      <!-- Hero Section -->
+      <div style="background:#c7d2fe;padding:12px 10px;position:relative;min-height:130px;">
+        <!-- Floating job card top-right -->
+        <div style="position:absolute;top:8px;right:6px;background:#fff;border-radius:4px;padding:5px 7px;width:72px;box-shadow:0 1px 4px rgba(0,0,0,.15);">
+          <div style="background:#e2e8f0;height:5px;width:50px;border-radius:2px;margin-bottom:3px;"></div>
+          <div style="background:#94a3b8;height:6px;width:60px;border-radius:2px;margin-bottom:4px;"></div>
+          <div style="display:flex;gap:3px;margin-bottom:3px;">
+            <div style="background:#bfdbfe;height:5px;width:22px;border-radius:2px;"></div>
+            <div style="background:#bbf7d0;height:5px;width:22px;border-radius:2px;"></div>
+          </div>
+          <div style="background:#e2e8f0;height:5px;width:40px;border-radius:2px;"></div>
+        </div>
+        <!-- SDG + Live Jobs badges -->
+        <div style="display:flex;gap:5px;margin-bottom:6px;">
+          <div style="background:#16a34a;color:#fff;border-radius:10px;padding:2px 6px;font-size:6.5pt;font-weight:bold;">✦ SDG 8.6 ALIGNED</div>
+          <div style="background:#1d4ed8;color:#fff;border-radius:10px;padding:2px 6px;font-size:6.5pt;">● 1+ live jobs</div>
+        </div>
+        <!-- Headline -->
+        <div style="background:#94a3b8;height:10px;width:160px;border-radius:2px;margin-bottom:4px;"></div>
+        <div style="background:#fbbf24;height:10px;width:130px;border-radius:2px;margin-bottom:4px;"></div>
+        <div style="background:#cbd5e1;height:6px;width:170px;border-radius:2px;margin-bottom:3px;"></div>
+        <div style="background:#cbd5e1;height:6px;width:140px;border-radius:2px;margin-bottom:8px;"></div>
+        <!-- Search bar -->
+        <div style="background:#fff;border-radius:4px;padding:5px 6px;display:flex;align-items:center;gap:4px;max-width:200px;">
+          <div style="background:#e2e8f0;height:6px;flex:1;border-radius:2px;"></div>
+          <div style="background:#e2e8f0;width:1px;height:10px;"></div>
+          <div style="background:#e2e8f0;height:6px;flex:1;border-radius:2px;"></div>
+          <div style="background:#4f46e5;height:16px;width:36px;border-radius:3px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:5.5pt;">Search</div>
+        </div>
+        <!-- Trending tags -->
+        <div style="display:flex;gap:4px;margin-top:5px;align-items:center;">
+          <span style="color:#94a3b8;font-size:6.5pt;">Trending:</span>
+          <div style="background:#e0e7ff;height:5px;width:28px;border-radius:10px;"></div>
+          <div style="background:#e0e7ff;height:5px;width:20px;border-radius:10px;"></div>
+          <div style="background:#e0e7ff;height:5px;width:30px;border-radius:10px;"></div>
+          <div style="background:#e0e7ff;height:5px;width:22px;border-radius:10px;"></div>
+        </div>
+        <!-- Floating job card bottom-right -->
+        <div style="position:absolute;bottom:8px;right:6px;background:#fff;border-radius:4px;padding:5px 7px;width:72px;box-shadow:0 1px 4px rgba(0,0,0,.15);">
+          <div style="display:flex;align-items:center;gap:3px;margin-bottom:3px;">
+            <div style="background:#e2e8f0;width:8px;height:8px;border-radius:2px;"></div>
+            <div style="background:#94a3b8;height:6px;width:50px;border-radius:2px;"></div>
+          </div>
+          <div style="display:flex;align-items:center;gap:3px;">
+            <div style="background:#22c55e;width:4px;height:4px;border-radius:50%;"></div>
+            <div style="background:#e2e8f0;height:5px;width:36px;border-radius:2px;"></div>
+          </div>
+        </div>
+      </div>
+      <!-- Stats Row -->
+      <div style="background:#fff;padding:6px 8px;display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:6px;">
+        <div style="text-align:center;"><div style="background:#e2e8f0;width:18px;height:18px;border-radius:4px;margin:0 auto 3px;"></div><div style="background:#cbd5e1;height:5px;border-radius:2px;"></div></div>
+        <div style="text-align:center;"><div style="background:#e2e8f0;width:18px;height:18px;border-radius:4px;margin:0 auto 3px;"></div><div style="background:#cbd5e1;height:5px;border-radius:2px;"></div></div>
+        <div style="text-align:center;"><div style="background:#e2e8f0;width:18px;height:18px;border-radius:4px;margin:0 auto 3px;"></div><div style="background:#cbd5e1;height:5px;border-radius:2px;"></div></div>
+        <div style="text-align:center;"><div style="background:#e2e8f0;width:18px;height:18px;border-radius:4px;margin:0 auto 3px;"></div><div style="background:#cbd5e1;height:5px;border-radius:2px;"></div></div>
+      </div>
+    </div>
+    <p class="fig" style="margin-top:4px;">Figure 16: Lo-Fi — Homepage</p>
+  </div>
+  <div>
+    <div style="border:2px solid #94a3b8;border-radius:6px;background:#f8fafc;overflow:hidden;font-size:8pt;color:#475569;">
+      <!-- Announcement Bar -->
+      <div style="background:#c7d2fe;height:14px;display:flex;align-items:center;justify-content:center;font-size:7pt;color:#3730a3;font-weight:bold;">[ 🎁 30-day FREE trial banner ]</div>
+      <!-- Navbar -->
+      <div style="background:#fff;border-bottom:1px solid #e2e8f0;padding:5px 8px;display:flex;align-items:center;justify-content:space-between;">
+        <div style="display:flex;align-items:center;gap:4px;">
+          <div style="background:#4f46e5;width:12px;height:12px;border-radius:3px;"></div>
+          <div style="background:#cbd5e1;width:40px;height:7px;border-radius:2px;"></div>
+        </div>
+        <div style="display:flex;gap:8px;">
+          <div style="background:#4f46e5;width:28px;height:6px;border-radius:2px;"></div>
+          <div style="background:#e2e8f0;width:28px;height:6px;border-radius:2px;"></div>
+          <div style="background:#e2e8f0;width:28px;height:6px;border-radius:2px;"></div>
+        </div>
+        <div style="display:flex;align-items:center;gap:4px;">
+          <div style="background:#e2e8f0;width:14px;height:14px;border-radius:50%;"></div>
+          <div style="background:#4f46e5;width:14px;height:14px;border-radius:50%;"></div>
+        </div>
+      </div>
+      <!-- Page Title + Search -->
+      <div style="background:#fff;padding:7px 8px;">
+        <div style="background:#374151;height:9px;width:80px;border-radius:2px;margin-bottom:3px;"></div>
+        <div style="background:#e2e8f0;height:5px;width:40px;border-radius:2px;margin-bottom:6px;"></div>
+        <!-- Search bar -->
+        <div style="display:flex;gap:4px;">
+          <div style="flex:2;background:#f1f5f9;border:1px solid #e2e8f0;border-radius:4px;height:16px;"></div>
+          <div style="flex:1;background:#f1f5f9;border:1px solid #e2e8f0;border-radius:4px;height:16px;"></div>
+          <div style="background:#4f46e5;border-radius:4px;height:16px;width:30px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:5.5pt;">Search</div>
+        </div>
+      </div>
+      <!-- Body: Sidebar + Cards -->
+      <div style="background:#f1f5f9;padding:6px 8px;display:grid;grid-template-columns:70px 1fr;gap:6px;">
+        <!-- Sidebar -->
+        <div style="background:#fff;border-radius:4px;padding:6px;border:1px solid #e2e8f0;">
+          <!-- Job Type -->
+          <div style="background:#374151;height:6px;width:36px;border-radius:2px;margin-bottom:5px;"></div>
+          <div style="display:flex;flex-direction:column;gap:3px;margin-bottom:8px;">
+            <div style="display:flex;align-items:center;gap:3px;"><div style="width:5px;height:5px;border:1px solid #94a3b8;border-radius:1px;"></div><div style="background:#e2e8f0;height:4px;width:28px;border-radius:2px;"></div></div>
+            <div style="display:flex;align-items:center;gap:3px;"><div style="width:5px;height:5px;border:1px solid #94a3b8;border-radius:1px;"></div><div style="background:#e2e8f0;height:4px;width:24px;border-radius:2px;"></div></div>
+            <div style="display:flex;align-items:center;gap:3px;"><div style="width:5px;height:5px;border:1px solid #94a3b8;border-radius:1px;"></div><div style="background:#e2e8f0;height:4px;width:26px;border-radius:2px;"></div></div>
+            <div style="display:flex;align-items:center;gap:3px;"><div style="width:5px;height:5px;border:1px solid #94a3b8;border-radius:1px;"></div><div style="background:#e2e8f0;height:4px;width:30px;border-radius:2px;"></div></div>
+            <div style="display:flex;align-items:center;gap:3px;"><div style="width:5px;height:5px;border:1px solid #94a3b8;border-radius:1px;"></div><div style="background:#e2e8f0;height:4px;width:22px;border-radius:2px;"></div></div>
+          </div>
+          <!-- Salary Range -->
+          <div style="background:#374151;height:6px;width:44px;border-radius:2px;margin-bottom:5px;"></div>
+          <div style="display:flex;flex-direction:column;gap:3px;">
+            <div style="display:flex;align-items:center;gap:3px;"><div style="width:5px;height:5px;border:1px solid #94a3b8;border-radius:50%;"></div><div style="background:#e2e8f0;height:4px;width:36px;border-radius:2px;"></div></div>
+            <div style="display:flex;align-items:center;gap:3px;"><div style="width:5px;height:5px;border:1px solid #94a3b8;border-radius:50%;"></div><div style="background:#e2e8f0;height:4px;width:40px;border-radius:2px;"></div></div>
+            <div style="display:flex;align-items:center;gap:3px;"><div style="width:5px;height:5px;border:1px solid #94a3b8;border-radius:50%;"></div><div style="background:#e2e8f0;height:4px;width:40px;border-radius:2px;"></div></div>
+            <div style="display:flex;align-items:center;gap:3px;"><div style="width:5px;height:5px;border:1px solid #94a3b8;border-radius:50%;"></div><div style="background:#e2e8f0;height:4px;width:28px;border-radius:2px;"></div></div>
+          </div>
+        </div>
+        <!-- Job Cards -->
+        <div style="display:flex;flex-direction:column;gap:5px;">
+          <!-- Job Card -->
+          <div style="background:#fff;border-radius:4px;padding:7px;border:1px solid #e2e8f0;">
+            <div style="display:flex;align-items:flex-start;gap:5px;margin-bottom:5px;">
+              <div style="background:#7c3aed;width:18px;height:18px;border-radius:4px;flex-shrink:0;display:flex;align-items:center;justify-content:center;color:#fff;font-size:6pt;font-weight:bold;">AC</div>
+              <div>
+                <div style="background:#e2e8f0;height:5px;width:50px;border-radius:2px;margin-bottom:3px;"></div>
+                <div style="background:#374151;height:7px;width:70px;border-radius:2px;"></div>
+              </div>
+            </div>
+            <div style="display:flex;gap:3px;margin-bottom:4px;">
+              <div style="background:#dbeafe;height:5px;width:28px;border-radius:10px;"></div>
+              <div style="background:#ede9fe;height:5px;width:28px;border-radius:10px;"></div>
+              <div style="background:#f1f5f9;height:5px;width:40px;border-radius:10px;"></div>
+            </div>
+            <div style="background:#e2e8f0;height:4px;width:55px;border-radius:2px;margin-bottom:5px;"></div>
+            <div style="display:flex;align-items:center;justify-content:space-between;">
+              <div style="background:#4f46e5;height:5px;width:55px;border-radius:2px;"></div>
+              <div style="background:#4f46e5;border-radius:3px;padding:2px 6px;color:#fff;font-size:6pt;">View →</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p class="fig" style="margin-top:4px;">Figure 17: Lo-Fi — Job Browse</p>
+  </div>
+</div>
+
+<h3>12.3 High-Fidelity Prototype</h3>
+<p>The running Hanapbuhay system itself serves as the hi-fi prototype, built with Tailwind CSS, Inter font, and an indigo/purple color scheme.</p>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:10px 0;">
+  <div><div class="screenshot"><img src="screenshots/figure-18-hifi-homepage.png" alt="Figure 18: Hi-Fi Homepage"></div><p class="fig">Figure 18: Hi-Fi — Homepage</p></div>
+  <div><div class="screenshot"><img src="screenshots/figure-19-hifi-resume.png" alt="Figure 19: Hi-Fi Resume Builder"></div><p class="fig">Figure 19: Hi-Fi — Resume Builder</p></div>
+  <div><div class="screenshot"><img src="screenshots/figure-20-hifi-accessibility.png" alt="Figure 20: Hi-Fi Accessibility Widget"></div><p class="fig">Figure 20: Hi-Fi — Accessibility Widget</p></div>
+  <div><div class="screenshot"><img src="screenshots/figure-21-hifi-admin.png" alt="Figure 21: Hi-Fi Admin Dashboard"></div><p class="fig">Figure 21: Hi-Fi — Admin Dashboard</p></div>
+</div>
+<div class="pn">26–27</div>
+</div>
+
+<!-- MESSAGE FROM THE DEVELOPER -->
+<div class="page">
+<h2>12.4 Message from the Developer</h2>
+<div class="dev-msg">
+  <div style="text-align:center;margin-bottom:20px;">
+    <div style="font-size:44px;margin-bottom:8px;">💼</div>
+    <div style="font-size:18pt;font-weight:900;letter-spacing:1px;color:#c7d2fe;">HANAPBUHAY</div>
+    <div style="font-size:11pt;color:#a5b4fc;">Philippine Job Portal — Version 1.0.0</div>
+  </div>
+  <p style="color:#e0e7ff;line-height:1.8;text-align:justify;margin-bottom:14px;">
+    Building <strong style="color:#fde68a;">Hanapbuhay</strong> was more than just a school requirement — it was a mission. The Philippines has one of the highest youth unemployment rates in Southeast Asia, with millions of young Filipinos unable to find stable employment despite their talent and determination.
+  </p>
+  <p style="color:#e0e7ff;line-height:1.8;text-align:justify;margin-bottom:14px;">
+    We built this platform with a simple belief: <em style="color:#fde68a;">access to job opportunities should never be a privilege.</em> Every Filipino — whether from Batanes or Tawi-Tawi, fresh graduate or experienced professional, with or without disability — deserves a fair and dignified chance at a livelihood. That is the soul of <strong style="color:#fde68a;">Hanapbuhay</strong>.
+  </p>
+  <p style="color:#e0e7ff;line-height:1.8;text-align:justify;margin-bottom:14px;">
+    We did not just build a job board. We built a platform aligned with the <strong style="color:#86efac;">United Nations SDG 8.6</strong>, featuring a world-class accessibility widget so even users with visual impairments, dyslexia, or motion sensitivity can use the system comfortably. We built a resume builder so that even those who cannot afford a professional resume writer can present their skills with pride.
+  </p>
+  <p style="color:#e0e7ff;line-height:1.8;text-align:justify;margin-bottom:20px;">
+    To every Filipino who will use Hanapbuhay to find their dream job — this was made for you. To every employer who will use it to build their team — thank you for investing in Filipino talent. And to our instructors and mentors who guided us — maraming salamat.
+  </p>
+  <div style="border-top:1px solid rgba(255,255,255,.2);padding-top:16px;font-size:12pt;color:#c7d2fe;font-style:italic;text-align:center;">
+    "Ang trabaho ay dignidad. Ang dignidad ay karapatan ng bawat Pilipino."<br>
+    <span style="font-size:10pt;color:#a5b4fc;">(Work is dignity. Dignity is the right of every Filipino.)</span>
+  </div>
+  <div style="margin-top:20px;text-align:right;font-size:11pt;color:#a5b4fc;">
+    With purpose and passion,<br>
+    <strong style="color:#fff;">The Hanapbuhay Development Team</strong><br>
+    April 2026
+  </div>
+</div>
+
+<div style="margin-top:28px;border:2px solid #e5e7eb;border-radius:10px;padding:20px;">
+  <h3 style="margin-top:0;border:none;">Developer Signatures</h3>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:12px;">
+    <div style="text-align:center;">
+      <div style="height:56px;margin-bottom:4px;display:flex;align-items:flex-end;justify-content:center;border-bottom:1px solid #111;">
+        <img src="screenshots/signature-jr.png" alt="" style="max-height:52px;max-width:180px;object-fit:contain;" onerror="this.style.display='none'">
+      </div>
+      <div style="font-size:10pt;">JR DELA ROSE<br><em style="color:#6b7280;">Member</em></div>
+    </div>
+    <div style="text-align:center;">
+      <div style="height:56px;margin-bottom:4px;display:flex;align-items:flex-end;justify-content:center;border-bottom:1px solid #111;">
+        <img src="screenshots/signature-ryan.png" alt="" style="max-height:52px;max-width:180px;object-fit:contain;" onerror="this.style.display='none'">
+      </div>
+      <div style="font-size:10pt;">RYAN MANUEL<br><em style="color:#6b7280;">Hipster</em></div>
+    </div>
+    <div style="text-align:center;">
+      <div style="height:56px;margin-bottom:4px;display:flex;align-items:flex-end;justify-content:center;border-bottom:1px solid #111;">
+        <img src="screenshots/signature-eriel.png" alt="" style="max-height:52px;max-width:180px;object-fit:contain;" onerror="this.style.display='none'">
+      </div>
+      <div style="font-size:10pt;">ERIEL ANGELO TOLENTINO<br><em style="color:#6b7280;">Hustler</em></div>
+    </div>
+    <div style="text-align:center;">
+      <div style="height:56px;margin-bottom:4px;display:flex;align-items:flex-end;justify-content:center;border-bottom:1px solid #111;">
+        <img src="screenshots/signature-mc.png" alt="" style="max-height:52px;max-width:180px;object-fit:contain;" onerror="this.style.display='none'">
+      </div>
+      <div style="font-size:10pt;">MC JARELD BARRA TAMUNDAY<br><em style="color:#6b7280;">Hacker</em></div>
+    </div>
+  </div>
+</div>
+
+<div style="margin-top:24px;text-align:center;font-size:10pt;color:#6b7280;">
+  — End of Document —<br>
+  Hanapbuhay Software User Manual v1.0 &nbsp;|&nbsp; GEC IT Laboratory Activity &nbsp;|&nbsp; AY 2025–2026
+</div>
+<div class="pn">28</div>
+</div>
+
+</body>
+</html>
